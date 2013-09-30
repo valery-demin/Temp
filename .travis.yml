@@ -3,14 +3,7 @@ before_install:
     - curl -O http://www.harukizaemon.com/simian/simian-2.3.34.tar.gz
     - tar -zxvf simian-2.3.34.tar.gz
 script:
-    - ls
-    - ant
-    - ant init
-    - ant jar
-    - ant build
-    - ant simian.classpath
     - ant check-simian
-    - ant simiantask.properties
 notifications:
   email:
     - Valery_Demin@epam.com
