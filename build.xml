@@ -1,0 +1,33 @@
+<project default="build" basedir=".">
+  <path id="simian.classpath">
+    <fileset dir="3rdparty/simian">
+      <include name="**/*.jar"/>
+    </fileset>
+  </path>
+  <taskdef resource="simiantask.properties" classpathref="simian.classpath"/>
+  <property name="simian.threshold" value="9"/>
+  
+    <target name="check-simian">
+    <simian threshold="${simian.threshold}" reportDuplicateText="true" failOnDuplication="true" ignoreLiterals="false" ignoreNumbers="true" ignoreModifiers="true">
+      <fileset dir=".">
+        <include name="**/*.m"/>
+        <exclude name="**/*Test.m"/>
+        <exclude name="**/*Tests.m"/>
+      </fileset>
+    </simian>
+  </target>
+  
+    <target name="build" depends="init">
+    <antcall target="check-simian"/>
+  </target>
+</project>  
+  <!--
+<taskdef resource="simiantask.properties" classpath="simian-2.3.34/bin/simian-2.3.34.jar"/>
+    <simian threshold="9" reportDuplicateText="true" failOnDuplication="true" ignoreLiterals="false" ignoreNumbers="true" ignoreModifiers="true">
+      <fileset dir=".">
+        <include name="**/*.m"/>
+        <exclude name="**/*Test.m"/>
+        <exclude name="**/*Tests.m"/>
+      </fileset>
+    </simian>
+	-->
