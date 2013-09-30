@@ -1,6 +1,6 @@
 <project default="build" basedir=".">
   <path id="simian.classpath">
-    <fileset dir="3rdparty/simian">
+    <fileset dir="simian-2.3.34">
       <include name="**/*.jar"/>
     </fileset>
   </path>
