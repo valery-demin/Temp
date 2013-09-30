@@ -5,6 +5,7 @@ before_install:
 script:
     - ls
     - ant
+    - ant init
     - ant jar
     - ant build
     - ant simian.classpath

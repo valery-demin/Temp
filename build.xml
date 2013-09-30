@@ -1,4 +1,5 @@
-  <!--<project default="build" basedir=".">
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project name="init" default="build" basedir=".">
   <path id="simian.classpath">
     <fileset dir="bin">
       <include name="**/*.jar"/>
@@ -21,7 +22,7 @@
     <antcall target="check-simian"/>
   </target>
 </project>  
-  -->
+ <!--
 	<taskdef resource="simiantask.properties" classpath="bin/simian-2.3.34.jar"/>
     <simian threshold="9" reportDuplicateText="true" failOnDuplication="true" ignoreLiterals="false" ignoreNumbers="true" ignoreModifiers="true">
       <fileset dir=".">
@@ -30,3 +31,4 @@
         <exclude name="**/*Tests.m"/>
       </fileset>
     </simian>
+ -->
