@@ -13,8 +13,6 @@ script:
     - chmod -x ./script/ci/install_oclint.sh
     - chmod -x ./script/ci/script_simian.sh
     - chmod -x ./script/ci/script_general.sh
-    - ls
-    - pwd
     - ./script/ci/install_simian.sh
     - if [[ $SPARK_SCHEME == Simian ]]; then ./script/ci/install_simian.sh; else ./script/ci/install_oclint.sh; fi
     - if [[ $SPARK_SCHEME == Simian ]]; then ./script/ci/script_simian.sh; else ./script/ci/script_general.sh; fi
