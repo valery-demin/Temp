@@ -9,9 +9,9 @@ env:
     - SPARK_SCHEME=SparkAttributesCodeGenerator
     - SPARK_SCHEME=Simian
 before_install:
-    - if [[ $SPARK_SCHEME == Simian ]]; then sudo ./bin/ci/install_simian.sh; else sudo ./bin/ci/install_oclint.sh; fi
+    - if [[ $SPARK_SCHEME == Simian ]]; then ./bin/ci/install_simian.sh; else ./bin/ci/install_oclint.sh; fi
 script:
-    - if [[ $SPARK_SCHEME == Simian ]]; then sudo ./bin/ci/script_simian.sh; else sudo ./bin/ci/script_general.sh; fi
+    - if [[ $SPARK_SCHEME == Simian ]]; then ./bin/ci/script_simian.sh; else ./bin/ci/script_general.sh; fi
 notifications:
   email:
     - Valery_Demin@epam.com

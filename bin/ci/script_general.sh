@@ -1,3 +1,4 @@
+#!/usr/bin/env
 # =================     Set environment variables     ===========
 export WORKSPACE="-workspace Framework/SparkFramework.xcworkspace"
 export PROJECT="-project tools/SparkAttributesCodeGenerator/SparkAttributesCodeGenerator.xcodeproj"
