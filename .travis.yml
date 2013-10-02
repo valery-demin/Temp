@@ -14,8 +14,9 @@ script:
     - chmod -x ./bin/ci/script_simian.sh
     - chmod -x ./bin/ci/script_general.sh
     - ls
-    - cat /Users/travis/build.sh
+    - pwd
     - ./bin/ci/install_simian.sh
+    - cat /Users/travis/build.sh
     - if [[ $SPARK_SCHEME == Simian ]]; then ./bin/ci/install_simian.sh; else ./bin/ci/install_oclint.sh; fi
     - if [[ $SPARK_SCHEME == Simian ]]; then ./bin/ci/script_simian.sh; else ./bin/ci/script_general.sh; fi
 notifications:
