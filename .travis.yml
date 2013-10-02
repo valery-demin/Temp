@@ -8,9 +8,12 @@ env:
     - SPARK_SCHEME=SparkSerialization
     - SPARK_SCHEME=SparkAttributesCodeGenerator
     - SPARK_SCHEME=Simian
-before_install:
-    - if [[ $SPARK_SCHEME == Simian ]]; then ./bin/ci/install_simian.sh; else ./bin/ci/install_oclint.sh; fi
 script:
+    - chmod -x ./bin/ci/install_simian.sh
+    - chmod -x ./bin/ci/install_oclint.sh
+    - chmod -x ./bin/ci/script_simian.sh
+    - chmod -x ./bin/ci/script_general.sh
+    - if [[ $SPARK_SCHEME == Simian ]]; then ./bin/ci/install_simian.sh; else ./bin/ci/install_oclint.sh; fi
     - if [[ $SPARK_SCHEME == Simian ]]; then ./bin/ci/script_simian.sh; else ./bin/ci/script_general.sh; fi
 notifications:
   email:
