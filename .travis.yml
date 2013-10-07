@@ -13,9 +13,13 @@ env:
 before_script:
     - chmod +x ./script_simian.sh
     - chmod +x ./script_general.sh
+    - sudo easy_install cpp-coveralls
 
 script:
     - if [[ $SPARK_SCHEME == Simian ]]; then ./script_simian.sh; else ./script_general.sh; fi
+
+after_success:
+    - ./coveralls.rb --extension m
 
 notifications:
   email:
