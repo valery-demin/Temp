@@ -6,7 +6,7 @@ export PROJECT="-project tools/SparkAttributesCodeGenerator/SparkAttributesCodeG
 if [[ $SPARK_SCHEME == SparkAttributesCodeGenerator ]]; then export PATCH_FOR_PROJECT_OR_WORKSPACE=$PROJECT; else export PATCH_FOR_PROJECT_OR_WORKSPACE=$WORKSPACE; fi
 
 # =================     Install cpp-coveralls    ===========
-sudo easy_install cpp-coveralls
+sudo easy_install cpp-coveralls > /dev/null
 
 # =================     Run build, test and oclint check     ===========
 xctool $PATCH_FOR_PROJECT_OR_WORKSPACE -scheme $SPARK_SCHEME -reporter pretty -reporter json-compilation-database:compile_commands.json build
