@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/valery-demin/Temp/badge.png)](https://coveralls.io/r/valery-demin/Temp)
+
 VKDemo
 ======
 
